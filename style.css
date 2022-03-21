@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    scrollbar-width: none;
+}
+.menu_navegacao{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    width: 100%;
+    position: fixed;
+    
+}
+.menu_navegacao > h1{
+    margin-left: 50px;
+    
+}
+.lista_navegacao{
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    align-items: center;
+    list-style: none;
+    margin-right: 5%;
+}
+.lista_navegacao > li > a{
+    text-decoration: none;
+    color: #828282;
+}
+.lista_navegacao > li > a:hover{
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.8ms;
+    font-size: 110%;
+}
+
+/****************************SECAO MAIN***************************/
+.secao_produtos{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 13vh;
+    width: 75%;
+}
+.card_produto{
+    width: 300px;
+    height: 380px;
+    border: 2px solid #F5F5F5;
+    margin-top: 20px;
+    margin-left: 30px;
+    
+}
+.card_produto >.div_imagem{
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 22vh;
+    display: flex;
+    justify-content: center;
+}
+.card_produto>.div_texto{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.div_texto>a{
+    margin-top: 10%;
+    color:#828282
+}
+.div_texto>.categoria{
+    background-color: #2E245E;
+    ;
+    color: white;
+    width: 30%;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carrinho_compras{
+    width: 90%;
+    height: 40vh;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 115%;
+}
+.title{
+    background-color: #6B54DE;
+    color: white;
+    width: 100%;
+    height:6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    
+}
+
+/***********************ASIDE**********************/
+
+main{
+    display: flex;
+}
+.menu_lateral{
+    position: fixed;
+    width: 25%;
+    
+    margin-top: 13vh;
+    margin-left: 77%;
+}
+
+.pesquisa>input{
+    width: 70%;
+    height: 6vh;    
+    border-style: none;
+    background-color: #F5F5F5;
+    color: #828282;
+    padding: 15px;
+}
+.pesquisa>button{
+    width: 20%;
+    height: 6vh;
+    border-style: none;
+    background-color: #6B54DE;
+    color:white;
+}
+
