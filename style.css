@@ -1,173 +1,144 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Poppins:wght@300&display=swap');
+:root{
+    --vermelhinho: #9F301F;
+    --branquinho: #FFFFFF;
+    --cinzinha: #F5F5F5;
+    --cinzinha2: #828282;
+    --laranjinha: #F19031;
+    --marronzinho: #412E20;
+}
 
 body{
     margin: 0;
-    box-sizing: border-box;
     padding: 0;
-    scrollbar-width: none;
-}
-.menu_navegacao{
-    display: flex;
-    justify-content: space-between;
-    background-color: #F5F5F5;
-    width: 100%;
-    position: fixed;
-    
-}
-.menu_navegacao > h1{
-    margin-left: 50px;
-    font-size: 155%;
-}
-.lista_navegacao{
-    display: flex;
-    justify-content: space-between;
-    width: 25%;
-    align-items: center;
-    list-style: none;
-    margin-right: 5%;
-   
-}
-.lista_navegacao > li > a{
-    text-decoration: none;
-    color: #828282;
-    font-weight: 600px;
-    font-family: 'Inter', sans-serif;
-}
-.lista_navegacao > li > a:hover{
-    text-decoration: none;
-    color: #000000;
-    transition: all 0.8ms;
-    font-size: 110%;
+    box-sizing: border-box;
 }
 
-/****************************SECAO MAIN***************************/
+/***********************HEADER****************************/
+.menu_navegacao{
+    width: 100%;
+    background-color: var(--vermelhinho);
+    color: var(--branquinho);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+}
+.lista_navegacao{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+}
+.menu_navegacao>h1{
+    margin-left: 10%;   
+}
+.lista_navegacao >li> a{
+    text-decoration: none;
+    color: var(--branquinho);
+}
+
+/*********************MAIN(ONDE OS PRODUTOS FICARAO)**********************/
+main{
+    display: flex;
+}
 .secao_produtos{
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 13vh;
-    width: 75%;
+    margin-top: 10vh;
+    
 }
 .card_produto{
-    width: 300px;
-    height: 380px;
-    border: 2px solid #F5F5F5;
-    margin-top: 20px;
-    margin-left: 30px;
+    width: 25%;
+    height: 60vh;
+    border: 2px solid var(--cinzinha);
+    margin-left: 4vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
 }
-.card_produto >.div_imagem{
-    background-color: #F5F5F5;
-    width: 100%;
-    height: 22vh;
+.div_imagem{
+    background-color: var(--cinzinha);
     display: flex;
     justify-content: center;
 }
-.card_produto>.div_texto{
-    padding: 15px;
+.div_texto{
     display: flex;
     flex-direction: column;
-}
-.div_texto>a{
-    margin-top: 10%;
-    color:#828282;
-    
+    padding: 10px;
 }
 .div_texto>.categoria{
-    background-color: #2E245E;;
-    color: white;
+    background-color: var(--vermelhinho);
+    color: var(--branquinho);
     width: 30%;
     height: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.card_descricao{
-    color: #828282;
-    font-family: "Inter";
-    font-size: 12px;
+.div_texto>.card_price{
+    color: var(--laranjinha);
 }
-.card_price{
-    font-family: "Inter";
-    font-size: 14px;
-    margin-top: 15px;
+.div_texto>a{
+    color: var(--cinzinha2);
 }
-.carrinho_compras{
-    width: 90%;
+
+/*********************CARRINHO DE COMPRAS**********************/
+
+.menu_lateral{
+    width: 20%;
+    margin: 13vh 75% 0;
+    position: fixed;
+}
+
+.pesquisa>input{
+    width: 71%;
+    height: 6vh;
+    border-style: none;
+    background-color: var(--cinzinha);
+}
+.pesquisa>button{
+    width: 25%;
+    height: 6vh;
+    margin-left: 5px;
+    background-color: var(--laranjinha);
+    color: var(--branquinho);
+    border-style: none;
+}
+.menu_lateral>.title{
+    margin-top: 10px;
+    width: 100%;
+    height: 6vh;
+    background-color: var(--laranjinha);
+    color: var(--branquinho);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu_lateral>.carrinho_compras{
+    width: 100%;
     height: 40vh;
-    background-color: #f5f5f5;
+    background-color:var(--cinzinha);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrinho_compras > div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 115%;
-    overflow: scroll;
 }
-.title{
-    background-color: #6B54DE;
-    color: white;
+.carrinho_compras > div> .titulo{
+    font-size: 25px;
+}
+.menu_lateral>.preco_total{
     width: 100%;
-    height:6vh;
+    height: 10vh;
+    background-color: var(--marronzinho);
+    color: var(--branquinho);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2vh;
+    flex-direction: column;
+    justify-content: space-around;
     
 }
 
-/***********************ASIDE**********************/
-
-main{
-    display: flex;
-}
-.menu_lateral{
-    position: fixed;
-    width: 25%;
-    margin-top: 13vh;
-    margin-left: 77%;
-}
-.pesquisa>input{
-    width: 70%;
-    height: 6vh;    
-    border-style: none;
-    background-color: #F5F5F5;
-    color: #828282;
-    padding: 15px;
-}
-.pesquisa>button{
-    width: 20%;
-    height: 6vh;
-    border-style: none;
-    background-color: #6B54DE;
-    color:white;
-}
-.preco_total{
-    width: 100%;
-    height: 15vh;
-    background-color: #333333;
-    color: #f5f5f5;
-    font-family: "Inter";
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-left: 20px;
-}
-.produto_carrinho{
-    display: flex;
-    font-size: 70%;
-    margin-top: 30px;
-}
-.produto_carrinho>.div_img{
-    width: 35%;
-    height: 14vh;
-    background-color: white;
-    margin-left: 10px;
-}
-.div_img>img{
-    width: 100%;
-
-}
-.produto_carrinho>.descricao{
-    margin-left: 15px;    
-
-}
