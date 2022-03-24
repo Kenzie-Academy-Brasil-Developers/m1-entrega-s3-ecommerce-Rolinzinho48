@@ -1,4 +1,5 @@
 let contador = 0
+let precinho = 0
 
 let produtos = [
     {
@@ -6,56 +7,64 @@ let produtos = [
         categoria: "Simples",
         titulo: "Churrasco Vegano",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco: "R$ 25,00"
+        preco: 25.00,
+        precoString: "R$ 25.00"
     },
     {
         img_src: "Barbecue.png",
         categoria: "Simples",
         titulo: "Barbecue",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco: "R$ 15,00"
+        preco: 15.00,
+        precoString: "R$ 15.00"
     },
     {
         img_src: "FrangoAssado.png",
         categoria: "Simples",
         titulo: "Frango Assado Simples",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco: "R$ 10,00"
+        preco: 10.00,
+        precoString: "R$ 10.00"
     },
     {
         img_src: "FrangoAssado2.png",
         categoria: "Completo",
         titulo: "Frango Assado Completo",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco: "R$ 15,00"
+        preco:  15.00,
+        precoString: "R$ 15.00"
     },
     {
         img_src: "PicanhaSimples.png",
         categoria: "Simples",
         titulo: "Picanha Simples",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco: "R$ 20,00"
+        preco:  20.00,
+        precoString: "R$ 20.00"
     },
     {
         img_src: "PicanhaCompleto.png",
         categoria: "Completo",
         titulo: "Picanha Completo",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco: "R$ 25,00"
+        preco: 25.00,
+        precoString: "R$ 25.00"
     },
     {
         img_src:"ComboEspeto.jpg",
         categoria:"Combo",
         titulo: "Combos de 5 Espetinhos",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco:" R$ 30,00"
+        preco: 30.00,
+        precoString: "R$ 30.00"
     },
     {
         img_src:"ComboPrato.jpg",
         categoria:"Combo",
         titulo: "Combos de 3 Pratos",
         descricao: "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
-        preco:" R$ 120,00"
+        preco: 120.00,
+        precoString: "R$ 120.00"
     }
 
 ]
@@ -98,7 +107,7 @@ Start()
             desc.classList.add("card_descricao")
             desc.innerText = produtos[i].descricao
             let price = document.createElement("span")
-            price.innerText = produtos[i].preco
+            price.innerText = "R$ " + produtos[i].preco.toFixed([2])
             price.classList.add("card_price")
             let Adicionar = document.createElement("a")
             Adicionar.innerText = "Adicionar ao carrinho"
@@ -160,15 +169,27 @@ Start()
 
     const captura = document.getElementById("carrinho_vazio")
 
+
+    function GerarIndice(txt){
+        for(let i =0;i<produtos.length;i++){
+            if(produtos[i].precoString == txt){
+                return produtos[i].preco
+            }
+        }
+    }
+
     function AdicionarAoCarrinho(event){
 
         contador++
+        let sla = GerarIndice(event.target.parentElement.children[3].textContent)
+        precinho += parseFloat(sla)
         
         if(contador == 1){
             document.getElementById("carrinho").innerHTML = ""
         }
         
         document.getElementById("qtd_produtos").innerText = `${contador}`
+        document.getElementById("total").innerText = "R$"+`${precinho}`+".00"
 
         const container = document.createElement("div")
         const divImg = document.createElement("div")
@@ -206,12 +227,16 @@ Start()
         event.target.parentElement.parentElement.remove()
         
         contador--
+        let sla = GerarIndice(event.target.parentElement.children[1].textContent)
+        precinho -= parseFloat(sla)
+   
 
         if(contador == 0){
             document.getElementById("carrinho").appendChild(captura)
         }
         document.getElementById("qtd_produtos").innerText = `${contador}`
 
+        document.getElementById("total").innerText = "R$"+`${precinho}`+".00"
     }
 
     function DarkMode(){

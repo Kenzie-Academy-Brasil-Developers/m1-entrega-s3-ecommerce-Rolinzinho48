@@ -45,7 +45,9 @@
     color: var(--branquinho);
 }
 .lista_navegacao>li:hover{
+    cursor: pointer;
     font-size: large;
+    transition: all 0.7ms;
 }
 
 /*********************MAIN(ONDE OS PRODUTOS FICARAO)**********************/
@@ -67,6 +69,11 @@ main{
     margin-top: 3vh;
     margin-bottom: 3vh;
 
+}
+.card_produto:hover{
+    box-shadow:5px 5px 5px 5px var(--laranjinha);
+    transform: scale(105%);
+    transition: all 0.3s;
 }
 .div_imagem{
     background-color: var(--cinzinha);
