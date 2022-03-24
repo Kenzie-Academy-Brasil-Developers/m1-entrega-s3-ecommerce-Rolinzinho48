@@ -5,12 +5,20 @@
     --cinzinha2: #828282;
     --laranjinha: #F19031;
     --marronzinho: #412E20;
+    --pretinho: #0C0C0C;
 }
 
-body{
+.body_normal{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--branquinho);
+}
+.body_dark{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--pretinho);
 }
 
 /***********************HEADER****************************/
@@ -32,9 +40,12 @@ body{
 .menu_navegacao>h1{
     margin-left: 10%;   
 }
-.lista_navegacao >li> a{
+.lista_navegacao >li{
     text-decoration: none;
     color: var(--branquinho);
+}
+.lista_navegacao>li:hover{
+    font-size: large;
 }
 
 /*********************MAIN(ONDE OS PRODUTOS FICARAO)**********************/
@@ -63,8 +74,10 @@ main{
     justify-content: center;
 }
 .div_texto{
+    height: 54%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     padding: 10px;
 }
 .div_texto>.categoria{
@@ -97,6 +110,14 @@ main{
     border-style: none;
     background-color: var(--cinzinha);
 }
+.pesquisa>input:hover{
+    padding-left: 10px;
+    font-size: 90%;
+    transition: all 0.3s;
+}
+.pesquisa>input:focus{
+    padding-left: 10px;
+}
 .pesquisa>button{
     width: 25%;
     height: 6vh;
@@ -120,12 +141,25 @@ main{
     height: 40vh;
     background-color:var(--cinzinha);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    overflow-y: scroll;
+}
+.carrinho_compras_dark{
+    width: 100%;
+    height: 40vh;
+    background-color:var(--pretinho);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
 }
 .carrinho_compras > div{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
 }
 .carrinho_compras > div> .titulo{
@@ -133,12 +167,45 @@ main{
 }
 .menu_lateral>.preco_total{
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     background-color: var(--marronzinho);
     color: var(--branquinho);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
     
 }
+.menu_lateral>.preco_total>span{
+    margin: 10px 40px;
+}
 
+.item_adicionado{
+    width: 96%;
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.item_adicionado > div > img{
+    width: 5vw;
+    height: 10vh;
+}
+.item_adicionado>.divTxt{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.item_adicionado>.divTxt>h2{
+    margin: 0;
+    font-size: 130%;
+}
+.item_adicionado>.divTxt>span{
+    margin: 0;
+    font-size: 85%;
+}
+.item_adicionado>.divTxt>a{
+    margin: 0;
+    font-size: 85%;
+}

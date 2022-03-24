@@ -7,116 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <title>Clone Amazon</title>
 </head>
-<body>
+<body class = "body_normal">
 
     <header>
         <nav class="menu_navegacao">
-            <h1>Churras</h1>
+            <h1 onclick="Start()">Churrasquinho</h1>
             <ul class = "lista_navegacao">
-                <li><a href="">Todos</a> </li>
-                <li><a href="">Simples</a></li>
-                <li><a href="">Completos</a></li>
-                <li><a href="">Combos</a></li>
-                <li><input type="checkbox" name=""></li>
+                <li id = "filtro_todos">Todos</li>
+                <li onclick="Filtro('Simples')">Simples</li>
+                <li onclick="Filtro('Completo')">Completos</li>
+                <li onclick="Filtro('Combo')">Combos</li>
+                <li><input type="checkbox" name="" id = "dark_mode"></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class = "secao_produtos">
-      
-            <div class = "card_produto">
-                <div class = "div_imagem">
-                    <img src="ChurrasVegano.png" alt="">
-                </div>
-                <div class = "div_texto">
-                    <span class = "categoria">Completo</span>
-                    <h3>Churrasco Vegano</h3>
-                    <span class = 'card_descricao'>O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...</span>
-                    <span class = "card_price">R$100,00</span>
-                    <a href="">Adicionar ao carrinho</a>
-                </div>
-                
-            </div>
-            
-            <div class = "card_produto">
-                <div class = "div_imagem">
-                    <img src="ChurrasVegano.png" alt="">
-                </div>
-                <div class = "div_texto">
-                    <span class = "categoria">Completo</span>
-                    <h3>Churrasco Vegano</h3>
-                    <span class = 'card_descricao'>O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...</span>
-                    <span class = "card_price">R$100,00</span>
-                    <a href="">Adicionar ao carrinho</a>
-                </div>
-                
-            </div>
-            <div class = "card_produto">
-                <div class = "div_imagem">
-                    <img src="ChurrasVegano.png" alt="">
-                </div>
-                <div class = "div_texto">
-                    <span class = "categoria">Completo</span>
-                    <h3>Churrasco Vegano</h3>
-                    <span class = 'card_descricao'>O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...</span>
-                    <span class = "card_price">R$100,00</span>
-                    <a href="">Adicionar ao carrinho</a>
-                </div>
-                
-            </div>
-            <div class = "card_produto">
-                <div class = "div_imagem">
-                    <img src="ChurrasVegano.png" alt="">
-                </div>
-                <div class = "div_texto">
-                    <span class = "categoria">Completo</span>
-                    <h3>Churrasco Vegano</h3>
-                    <span class = 'card_descricao'>O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...</span>
-                    <span class = "card_price">R$100,00</span>
-                    <a href="">Adicionar ao carrinho</a>
-                </div>
-                
-            </div>
-            <div class = "card_produto">
-                <div class = "div_imagem">
-                    <img src="ChurrasVegano.png" alt="">
-                </div>
-                <div class = "div_texto">
-                    <span class = "categoria">Completo</span>
-                    <h3>Churrasco Vegano</h3>
-                    <span class = 'card_descricao'>O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...</span>
-                    <span class = "card_price">R$100,00</span>
-                    <a href="">Adicionar ao carrinho</a>
-                </div>
-                
-            </div>
-            <div class = "card_produto">
-                <div class = "div_imagem">
-                    <img src="ChurrasVegano.png" alt="">
-                </div>
-                <div class = "div_texto">
-                    <span class = "categoria">Completo</span>
-                    <h3>Churrasco Vegano</h3>
-                    <span class = 'card_descricao'>O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...</span>
-                    <span class = "card_price">R$100,00</span>
-                    <a href="">Adicionar ao carrinho</a>
-                </div>
-                
-            </div>
-            <div class = "card_produto">
-                <div class = "div_imagem">
-                    <img src="ChurrasVegano.png" alt="">
-                </div>
-                <div class = "div_texto">
-                    <span class = "categoria">Completo</span>
-                    <h3>Churrasco Vegano</h3>
-                    <span class = 'card_descricao'>O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...</span>
-                    <span class = "card_price">R$100,00</span>
-                    <a href="">Adicionar ao carrinho</a>
-                </div>
-                
-            </div>
-            
+        <section id = "eusla" class = "secao_produtos">
            
 
         </section>
@@ -125,28 +31,35 @@
         <aside class = "menu_lateral">
 
             <section class = "pesquisa">
-                <input type="search" name="" id="" placeholder="Pode pesquisar, tem tudo...">
-                <button>Pesquisar</button>
+                <input type="search" name="" id="input-pesquisa" placeholder="Pode pesquisar, tem tudo...">
+                <button id = "btn_pesquisa">Pesquisar</button>
             </section>
 
             <section class = "title">
                 <h4>Carrinho de Compras</h4>
             </section>
-            <section class = "carrinho_compras">
+            <section id = "carrinho" class = "carrinho_compras">
                 
-                <div>
+                <div id = "carrinho_vazio">
                     <span class = "titulo">Carrinho vazio</span>
                     <span>Adicione itens</span>
                 </div>
+
             </section>
-            <section class = "preco_total">
+            <section id = "preco_total" class = "preco_total">
                 <span>Quantidade</span>
-                <span>Total</span>
+                <span id = "qtd_produtos"></span>
+                <span id = "">Total</span>
+                
+                <span id = "total">R$</span>
             </section>
 
 
         </aside>
     </main>
 
+
+
+    <script src = "script.js"></script>
 </body>
 </html>
